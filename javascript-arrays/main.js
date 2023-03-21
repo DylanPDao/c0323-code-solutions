@@ -21,7 +21,7 @@ const students = [
 ];
 const numberOfStudents = students.length;
 console.log('Value of numberOfStudents:', numberOfStudents);
-const lastIndex = students.length - 1;
+const lastIndex = numberOfStudents - 1;
 const lastStudent = students[lastIndex];
 console.log('The last student in the array is ', lastStudent);
 console.log('value of students:', students);
