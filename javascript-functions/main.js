@@ -2,33 +2,33 @@ function convertMinutesToSeconds(minutes) {
   const minute = (minutes * 60);
   return minute;
 }
-convertMinutesToSeconds(5);
-console.log(convertMinutesToSeconds(5));
+const minutes = convertMinutesToSeconds(5);
+console.log(minutes);
 
 function greet(name) {
   const greetings = 'Hey, ' + name;
   return greetings;
 }
-greet('Beavis');
-console.log(greet('Beavis'));
+const greetings = greet('Beavis');
+console.log(greetings);
 
 function getArea(width, height) {
   const area = (width * height);
   return area;
 }
-getArea(17, 42);
-console.log(getArea(17, 42));
+const area = getArea(17, 42);
+console.log(area);
 
 function getFirstName(person) {
   const getFirst = person.firstName;
   return getFirst;
 }
-getFirstName({ firstName: 'Lelouche', lastName: 'Lamperouge' });
-console.log(getFirstName({ firstName: 'Lelouche', lastName: 'Lamperouge' }));
+const first = getFirstName({ firstName: 'Lelouche', lastName: 'Lamperouge' });
+console.log(first);
 
 function getLastElement(array) {
   const lastE = (array[array.length - 1]);
   return lastE;
 }
-getLastElement(['propane', 'and', 'propane', 'accessories']);
-console.log(getLastElement(['propane', 'and', 'propane', 'accessories']));
+const last = getLastElement(['propane', 'and', 'propane', 'accessories']);
+console.log(last);
