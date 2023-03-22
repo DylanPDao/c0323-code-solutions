@@ -5,7 +5,7 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - Why do we log things to the console?
-console.log()
+to see what value is currently there on a particular variable.
 - What is a method?
 function which is a property of an object, make object do something
 - How is a method different from any other function?
@@ -15,11 +15,13 @@ array.pop()
 - How do you round a number down to the nearest integer?
 math.floor()
 - How do you generate a random number?
-math.floor(math.random(array.length-1))
+math.random(array.length-1)
 - How do you delete an element from an array?
-array.push()
+array.splice(starting index, how many)
+array.pop() - last value off
+array.shift() - takes the first value off
 - How do you append an element to an array?
-array.shift()
+array.unhift()/array.push
 - How do you break a string up into an array?
 .split()
 - Do string methods change the original string? How would you check if you weren't sure?
