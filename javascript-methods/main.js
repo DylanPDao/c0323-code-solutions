@@ -10,7 +10,7 @@ const heroes = [
   'blackWidow',
   'thor'
 ];
-// const random = Math.floor(Math.random(heroes.length - 1));
+
 let randomNumber = Math.random();
 randomNumber *= heroes.length;
 const randomIndex = Math.floor(randomNumber);
@@ -19,9 +19,9 @@ const randomHero = heroes[randomIndex];
 console.log('randomHero:', randomHero);
 
 const library = [
-  { title: 'charolettesWeb', author: 'E.B.White' },
-  { title: 'harryPotter', author: 'J.K. Rowling' },
-  { title: 'tidying', author: 'Marie Condo' }
+  { title: 'Charolettes Web', author: 'E.B.White' },
+  { title: 'Harry Potter', author: 'J.K. Rowling' },
+  { title: 'Tidying', author: 'Marie Condo' }
 ];
 
 const lastBook = library.pop();
@@ -47,6 +47,7 @@ console.log('library:', library);
 
 const fullName = 'Dylan Dao';
 const firstAndLastName = fullName.split(' ');
+console.log(fullName);
 console.log('firstAndLastName:', firstAndLastName);
 const firstName = firstAndLastName[0];
 const sayMyName = firstName.toUpperCase();
