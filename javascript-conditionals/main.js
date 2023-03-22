@@ -80,6 +80,6 @@ function recommendMovie(genre) {
     case 'sci-fi':
       return 'The Mandalorian';
     default:
-      return 'try again bud';
+      return 'Genre not recognized. Choose between action, comedy, horror, drama, musical, or sci-fi';
   }
 }
