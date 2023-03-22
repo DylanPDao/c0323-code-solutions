@@ -42,53 +42,44 @@ function isOldEnoughToDrinkAndDrive(person) {
 
 function categorizeAcidity(pH) {
   if (pH < 7 && pH >= 0) {
-    console.log('acid');
+    return 'acid';
   } else if (pH === 7) {
-    console.log('neutral');
+    return 'neutral';
   } else if (pH > 7 && pH <= 14) {
-    console.log('base');
+    return 'base';
   } else {
-    console.log('invalid pH level');
+    return 'invalid pH level';
   }
 }
 
 function introduceWarnerBro(name) {
   switch (name.toLowerCase()) {
     case 'yakko':
-      console.log('We\'re the warner brothers!');
-      break;
+      return 'We\'re the warner brothers!';
     case 'wakko':
-      console.log('We\'re the warner brothers!');
-      break;
+      return 'We\'re the warner brothers!';
     case 'dot':
-      console.log('I\'m cute~');
-      break;
+      return 'I\'m cute~';
     default:
-      console.log('Goodnight everybody!');
+      return 'Goodnight everybody!';
   }
 }
 
 function recommendMovie(genre) {
-  switch (genre.toLowerCase()) {
+  switch (genre) {
     case 'action':
-      console.log('Die Hard');
-      break;
+      return 'Die Hard';
     case 'comedy':
-      console.log('The Big Lebowski');
-      break;
+      return 'The Big Lebowski';
     case 'horror':
-      console.log('The Ring');
-      break;
+      return 'The Ring';
     case 'drama':
-      console.log('Awaken');
-      break;
+      return 'Awaken';
     case 'musical':
-      console.log('High School Musical');
-      break;
+      return 'High School Musical';
     case 'sci-fi':
-      console.log('The Mandalorian');
-      break;
+      return 'The Mandalorian';
     default:
-      console.log('try again bud');
+      return 'try again bud';
   }
 }
