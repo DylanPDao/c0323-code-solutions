@@ -1,8 +1,8 @@
 /* exported getIndexes */
 function getIndexes(array) {
   const arr = [];
-  for (const key in array) {
-    arr.push(+key);
+  for (let i = 0; i < array.length; i++) {
+    arr.push(i);
   }
   return arr;
 }
