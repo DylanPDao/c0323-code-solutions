@@ -1,8 +1,8 @@
 /* exported drop */
-function drop(array, count) {
+function drop(array, counts) {
   const arr = [];
   for (let i = 0; i < array.length; i++) {
-    if (i > count - 1) {
+    if (i > counts - 1) {
       arr.push(array[i]);
     }
   }
