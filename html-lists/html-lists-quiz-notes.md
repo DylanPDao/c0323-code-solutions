@@ -5,9 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is the difference between an ordered list and an unordered list in HTML?
-
+ordered lists go in order from 1...
 - Is an HTML list a block element or an inline element?
-
+block element
 
 ## Notes
 
