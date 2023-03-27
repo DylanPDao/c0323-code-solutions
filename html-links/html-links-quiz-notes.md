@@ -5,11 +5,12 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What HTML tag is used to link to another website?
+<a></a>
 
 - What is an absolute URL?
-
+full webpage address
 - What is a relative URL?
-
+pages within same site/folder location
 
 ## Notes
 
