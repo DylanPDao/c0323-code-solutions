@@ -5,11 +5,19 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are the six primary HTML elements for creating tables?
+<table>
+<thead>
+<tbody>
+<tr>
+<th>
+<td>
+<tfooter>
 
 - What purpose do the `thead` and `tbody` elements serve?
-
+separates the rows in code, tells you what section is what
 - Give two examples of data that would lend itself well to being displayed in a table.
-
+schedules
+bmi chart
 ## Notes
 
 All student notes should be written here.
