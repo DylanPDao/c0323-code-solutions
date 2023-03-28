@@ -8,13 +8,15 @@ function titleCase(title) {
   const lower = ['And', 'Or', 'Nor', 'But', 'A', 'An', 'The', 'As',
     'At', 'By', 'For', 'In', 'Of', 'On', 'Per', 'To'];
   for (i = 0; i < newStr.length; i++) {
-    if (newStr[i].includes('Javascript')) {
-      newStr[i] = 'JavaScript';
-      // if (newStr[i].includes(':')) {
-      //   console.log(newStr[i]);
-      // }
-      continue;
-    }
+    // if (newStr[i].includes('Javascript')) {
+    //   const newArr = newStr[i].split('');
+    //   newStr[i] = 'JavaScript';
+    //   continue;
+    // }
+    // if (newStr[i].indexOf(':') !== -1) {
+    //   console.log(newStr[i]);
+    //   continue;
+    // }
     if (newStr[i] === 'Api') {
       newStr[i] = 'API';
       continue;
