@@ -8,15 +8,12 @@ function titleCase(title) {
   const lower = ['And', 'Or', 'Nor', 'But', 'A', 'An', 'The', 'As',
     'At', 'By', 'For', 'In', 'Of', 'On', 'Per', 'To'];
   for (i = 0; i < newStr.length; i++) {
-    // if (newStr[i].includes('Javascript')) {
-    //   const newArr = newStr[i].split('');
-    //   newStr[i] = 'JavaScript';
-    //   continue;
-    // }
-    // if (newStr[i].indexOf(':') !== -1) {
-    //   console.log(newStr[i]);
-    //   continue;
-    // }
+    if (newStr[i].includes('Javascript')) {
+      const newArr = newStr[i].split('');
+      newArr[4] = newArr[4].toUpperCase();
+      newStr[i] = newArr.join('');
+      continue;
+    }
     if (newStr[i] === 'Api') {
       newStr[i] = 'API';
       continue;
@@ -31,6 +28,13 @@ function titleCase(title) {
       if (newStr[i] === lower[j]) {
         newStr[i] = newStr[i].toLowerCase();
       }
+    }
+  }
+  for (i = 0; i < newStr.length; i++) {
+    if (newStr[i].indexOf(':') !== -1) {
+      const newArr = newStr[i + 1].split('');
+      newArr[0] = newArr[0].toUpperCase();
+      newStr[i + 1] = newArr.join('');
     }
   }
   const final = newStr.join(' ');
