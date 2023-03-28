@@ -5,12 +5,13 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are the names of the individual pieces of a CSS rule?
-
+property : value ;
 - In CSS, how do you select elements by their `class` attribute?
-
+period .
 - In CSS, how do you select elements by their tag name?
-
+p, div, label, etc
 - In CSS, how do you select an element by its `id` attribute?
+#
 
 
 ## Notes
