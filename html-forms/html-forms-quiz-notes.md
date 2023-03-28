@@ -5,12 +5,22 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is the purpose of an HTML `form` element?
+declare that there is an interactive section
 
 - Give five examples of form control elements.
+<input>
+<label>
+<select>
+<textarea>
+<button>
 
 - Give three examples of `type` attribute values for HTML `<input>` elements.
+<button>
+<textarea>
+<datalist>
 
 - Is an HTML `<input>` element a block element or an inline element?
+inline
 
 ## Notes
 
