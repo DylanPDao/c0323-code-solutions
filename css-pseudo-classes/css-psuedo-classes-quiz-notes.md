@@ -5,9 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a pseudo-class?
-
+keyword added to a selector that specifies a special state of the selected element
 - What are CSS pseudo-classes useful for?
-
+adding dynamics to webpage w just css
 
 ## Notes
 
