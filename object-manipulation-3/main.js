@@ -81,8 +81,9 @@
 // }
 // //compare values
 // function winner() {
+//   debugger;
 //   const newArr = [];
 //   for (let i = 0; i < 4; i++) {
-
+//     newArr.push(Number(playerCards[i])+Number(playerCards[i+4]))
 //   }
 // }
