@@ -1,15 +1,17 @@
-console.log('Lodash is loaded:', typeof _ !== 'undefined');
+// console.log('Lodash is loaded:', typeof _ !== 'undefined');
 // function runGame() {
-//   const players = {
-//     Shawn: 2,
-//     Brian: 2,
-//     Sarah: 2,
-//     Dylan: 2
-//   };
 //   getDeck();
 //   shuffle();
+//   deal();
 // }
+
 // const deck = [];
+// const players = [
+//   { Name: 'Shawn', hand: [] },
+//   { Name: 'Brian', hand: [] },
+//   { Name: 'Sarah', hand: [] },
+//   { Name: 'Dylan', hand: [] }
+// ];
 
 // function getDeck() {
 //   const suits = ['spades', 'diamonds', 'clubs', 'hearts'];
@@ -25,12 +27,16 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 // }
 
 // function shuffle() {
-//   for (let i = 0; i < 1000; i++) {
-//     const place1 = Math.floor(Math.random() * deck.length);
-//     const place2 = Math.floor(Math.random() * deck.length);
-//     const temp = deck[place1];
-//     deck[place1] = deck[place2];
-//     deck[place2] = temp;
+//   for (let i = deck.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * deck.length);
+//     const temp = deck[j];
+//     deck[i] = deck[j];
+//     deck[j] = temp;
 //   }
 //   return deck;
+// }
+
+// function deal() {
+//   for (let i = 0; i < deck.length; i++)
+
 // }
