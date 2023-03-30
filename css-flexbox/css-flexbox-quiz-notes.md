@@ -7,7 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the default `flex-direction` of a `flex` container?
 row
 - What is the default `flex-wrap` of a `flex` container?
-wraps to next row/column
+no wrap
 - What axis do the `justify-content` properties work on?
 main axis of container
 - What axis do the `align-items` properties work on?
