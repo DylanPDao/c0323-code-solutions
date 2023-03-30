@@ -17,8 +17,12 @@ body {
   display: flex;
 }
 
+.one-fourth {
+  width: 25%;
+}
+
 .pics {
-  max-width: 25%;
+  max-width: 200px;
 }
 
 .one-third {
@@ -26,15 +30,10 @@ body {
   margin: 1rem;
 }
 
+.item {
+  max-width: 266px;
+}
+
 .two-thirds {
   width: calc((100%/3) *2);
-  margin: 1rem;
-}
-
-.one-third1 {
-  width: calc(100%/3);
-}
-
-.one {
-  margin-left: 2rem;
 }
