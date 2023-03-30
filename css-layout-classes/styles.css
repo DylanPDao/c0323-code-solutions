@@ -1,0 +1,40 @@
+body {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.four {
+  display: flex;
+}
+
+.pics {
+  max-width: 25%;
+}
+
+.one-third {
+  width: calc(100%/3);
+  margin: 1rem;
+}
+
+.two-thirds {
+  width: calc((100%/3) *2);
+  margin: 1rem;
+}
+
+.one-third1 {
+  width: calc(100%/3);
+}
+
+.one {
+  margin-left: 2rem;
+}
