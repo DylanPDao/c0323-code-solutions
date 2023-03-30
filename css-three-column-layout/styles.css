@@ -10,7 +10,6 @@ body {
 
 #motto {
   font-size: 1.5rem;
-  margin-left: 1rem;
 }
 
 .imagediv {
@@ -21,15 +20,14 @@ body {
   margin-bottom: 1rem;
 }
 
-.container,
 .column,
 .row {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.column,
-.container {
+.column {
   flex-direction: column;
 }
 
