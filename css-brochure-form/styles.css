@@ -1,0 +1,53 @@
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#learn {
+  color: #ec5d58;
+  margin-bottom: -5px;
+}
+
+label {
+  font-size: 8px;
+  font-family: "Brandon Grotesque", sans-serif;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+input[value] {
+  color: lightgray;
+  font-size: 12px;
+}
+
+input {
+  width: 300px;
+  height: 25px;
+}
+
+select {
+  width: 300px;
+  height: 25px;
+  font-family: "Brandon Grotesque", sans-serif;
+  font-size: 12px;
+}
+
+#btn {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+#submit {
+  display: flex;
+  align-self: center;
+  margin-left: 225px;
+  background-color: #ec5d58;
+  color: white;
+  border-radius: 13px;
+  border: none;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
