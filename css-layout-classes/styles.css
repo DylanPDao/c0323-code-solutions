@@ -27,7 +27,6 @@ body {
 
 .one-third {
   width: calc(100%/3);
-  margin: 1rem;
 }
 
 .item {
