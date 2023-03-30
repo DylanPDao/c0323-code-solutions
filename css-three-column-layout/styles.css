@@ -1,0 +1,53 @@
+body {
+  color: white;
+  background-color: #1996da;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  max-width: 800px;
+  margin: auto;
+}
+
+#motto {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.imagediv {
+  background-color: white;
+  border-radius: 50%;
+  width: 6rem;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.container,
+.column,
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.column,
+.container {
+  flex-direction: column;
+}
+
+img {
+  width: 100%;
+  scale: 50%;
+}
+
+.minihead {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.texts {
+  width: 80%;
+}
