@@ -5,7 +5,7 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is the **default** value for the `position` property of HTML elements?
-normal flow, block positioning
+position:static
 - How does setting `position: relative` on an element affect document flow?
 other things stay in its intended position
 - How does setting `position: relative` on an element affect where it appears on the page?
