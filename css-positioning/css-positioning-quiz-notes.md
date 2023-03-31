@@ -9,9 +9,9 @@ position:static
 - How does setting `position: relative` on an element affect document flow?
 other things stay in its intended position
 - How does setting `position: relative` on an element affect where it appears on the page?
-able to adjust it by shifting in a direction.
+positioned where it would be to the normal flow of the document and then be offest by values plugged in(top, bottom, right, left)
 - How does setting `position: absolute` on an element affect document flow?
-does not affect normal flow of other elements
+removed from document flow. final position determined by values of (top, bottom, right, left)
 - How does setting `position: absolute` on an element affect where it appears on the page?
 appears in position assigned, other elements are behind it
 - How do you constrain an absolutely positioned element to a containing block?
