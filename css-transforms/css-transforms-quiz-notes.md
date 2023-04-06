@@ -5,9 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What does the transform property do?
-
+manipulate with css
 - Give four examples of CSS transform functions.
-
+rotate, scale, skew, or translate
 
 ## Notes
 

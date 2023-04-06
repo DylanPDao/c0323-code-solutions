@@ -34,3 +34,15 @@ button {
 button:focus {
   outline: none;
 }
+
+button:active {
+  transform: translate(0.25rem);
+}
+
+.pokeball-wrapper:first-child > .pokeball {
+  transform: rotate(-30deg);
+}
+
+.pokeball-wrapper:last-child > .pokeball {
+  transform: rotate(30deg);
+}
