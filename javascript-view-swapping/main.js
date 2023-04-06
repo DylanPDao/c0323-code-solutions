@@ -13,7 +13,6 @@ $tabContainer.addEventListener('click', function (e) {
       }
     }
     const $data = e.target.dataset.view;
-    console.log($data);
     if (e.target.matches('.tab')) {
       for (let i = 0; i < $view.length; i++) {
         if ($data === $view[i].dataset.view) {
