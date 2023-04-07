@@ -8,7 +8,7 @@ console.log('arry:', array);
 console.log('array typeof:,', typeof array);
 
 const jsString = JSON.stringify(array);
-console.log('JSON arry:', JSON.stringify(array));
+console.log('JSON arry:', jsString);
 console.log('JSON array typeof:,', typeof jsString);
 
 const jsonFormString = '{ "numberID": "111", "String name": "charmander" }';
