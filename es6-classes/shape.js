@@ -6,9 +6,9 @@ class Shape {
   }
 
   describe() {
-    return 'The perimeter is ' + this.perimeter + ' and the area is ' +
-    this.area + '.';
+    return `Area: ${this.area}, Perimeter: ${this.perimeter}`;
   }
 }
 
-console.log(Shape);
+const shape = new Shape(144, 42);
+console.log(shape.describe());
