@@ -43,7 +43,7 @@ arrowLeft.addEventListener('click', (e) => {
 
 arrowRight.addEventListener('click', (e) => {
   clearInterval(intervalID);
-  if (count === 5) {
+  if (count === picture.length) {
     count = 0;
   }
   swapPicture();
