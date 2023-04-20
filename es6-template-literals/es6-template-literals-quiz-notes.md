@@ -5,10 +5,10 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is the syntax for writing a template literal?
-
+`words words words ${value}`
 - What is "string interpolation"?
 
-
+string interpolation is the process of evaluating a string literal containing one or more placeholders
 ## Notes
 
 All student notes should be written here.
