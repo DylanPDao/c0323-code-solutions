@@ -7,32 +7,24 @@ const book = {
 };
 
 console.log('Exercise 1');
-const doubled = numbers.map(function (n) {
-  return n * 2;
-});
+const doubled = numbers.map((n) => n * 2);
 console.log('doubled', doubled);
 
 console.log('\n\nExercise 2');
 function actOnEntries(obj, action) {
-  Object.entries(obj).forEach(function (e) {
-    action(e);
-  });
+  Object.entries(obj).forEach((e) => action(e));
 }
-actOnEntries(book, function (entry) {
-  console.log(`${entry[0]} = ${entry[1]}`);
-});
+actOnEntries(book, (entry) => console.log(`${entry[0]} = ${entry[1]}`));
 
 console.log('\n\nExercise 3');
-function foo() {
-  console.log("Why doesn't this log???");
-}
+const foo = () => console.log("Why doesn't this log???");
 console.log('foo type:', typeof foo);
 
 console.log('\n\nExercise 4');
 const startTime = Date.now();
 let count = 5;
 console.log('Start');
-const intervalId = setInterval(function () {
+const intervalId = setInterval(() => {
   console.log(count);
   count--;
   if (count <= 0) {
