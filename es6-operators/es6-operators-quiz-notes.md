@@ -5,17 +5,19 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are the `&&` (logical AND) and `||` (logical OR) operators and how can they be used outside of `if` statements?
-  `&&` = both true to continue
-  `||` = one or other true to continue
+  `&&` = return first truthy
+  `||` = return first falsy
   use as conditionals
 - What is "short-circuit evaluation" and how does it apply to `&&` and `||`?
-  `&&` = checks one if false will exit, doesnt check next one
-  `||` = doesnt apply
+  left to right, as soon as answer then bounce from equation
 - What is the `??` (nullish coalescing) operator and how does it differ from `||`?
   returns its right-hand side operand when its left-hand side operand is null or undefined
   returns a default value, or returns boolean
 - What is the `?:` (ternary) operator? How does it differ from `if/else`?
   conditional ? iftrue : if false
+  one liner // ?:
+  is expression can assign to something
+  if/else is a statment cannot assign
   similar to if else, clean single line code
 - What is the `?.` (optional chaining) operator? When would you use it?
   checks object's property or calls a function
@@ -24,7 +26,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   syntax allows an iterable, such as an array or string, to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected
   mostly used with arrays, most objects arent iterable
 - What data types can be spread into an array? Into an object?
-  any primitive data types
+  iterables into array, non iterables will throw an error
 - How does spread syntax differ from rest syntax?
   spread expands array and elemnents, rest does the opposite
 
