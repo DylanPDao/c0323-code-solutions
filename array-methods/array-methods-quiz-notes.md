@@ -15,7 +15,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   - What does `Array.map` do?
     creates a new array populated with the results of calling a provided function on every element in the calling array
   - What should the callback function return?
-    value after function execution
+    single value based on the element and function passed
   - What is `Array.map` useful for?
     iterating through array, doing function on each, then storing info into new array for later use.
 - `Array.filter`:
