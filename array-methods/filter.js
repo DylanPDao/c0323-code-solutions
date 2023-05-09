@@ -11,3 +11,9 @@ const names = [
   'Janese',
   'Donna',
 ];
+
+const evenNumbers = numbers.filter((e) => e % 2 === 0);
+console.log('Even numbers', evenNumbers);
+
+const noD = names.filter((e) => !e.includes('d') && !e.includes('D'));
+console.log('No D', noD);
