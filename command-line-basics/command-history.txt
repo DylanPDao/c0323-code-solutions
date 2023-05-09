@@ -1,0 +1,500 @@
+   55  git status
+   56  git add dom-event-delegation
+   57  git status
+   58  git commit -m 'finished'
+   59  git push origin dom-event-delegation
+   60  git switch main
+   61  git pull origin main
+   62  git branch javascript-view-swapping
+   63  git status
+   64  git switch javascript-view-swapping
+   65  git add javascript-view-swaooing
+   66  git add javascript-view-swapping
+   67  git status
+   68  git commit -m 'starting files'
+   69  git status
+   70  git add javascript-view-swapping
+   71  git status
+   72  git commit -m 'javascript-view-swapping
+   73  git status
+   74  git commit -m 'javascript-view-swapping
+   75  git status
+   76  git commit -m 'finish'
+   77  git push origin javascript-view-swapping
+   78  git status
+   79  git add javacsript-view-swapping
+   80  git add javascript-view-swapping
+   81  git status
+   82  git commit -m 'took out console.log'
+   83  git push origin javascript-view-swapping
+   84  git status
+   85  git switch main
+   86  git pull origin main
+   87  git branch css-transitions
+   88  git add css-transitions
+   89  git switch css-transitions
+   90  git add css-transitions
+   91  git commit -m 'starting'
+   92  git add css-transitions
+   93  git commit -m 'finished'
+   94  git push origin css-transitions
+   95  git add css-transitions
+   96  git commit -m 'changed transition'
+   97  git push origin css-transitions
+   98  git status
+   99  git branch css-responsive-layout
+  100  git status
+  101  git switch css-responsive-layout
+  102  git status
+  103  git add css-responsive-layout
+  104  git status
+  105  git commit -m 'starting files'
+  106  git add css-responsive-layout
+  107  git status
+  108  git commit -m 'finished'
+  109  git push origin css-responsive-layout
+  110  git switch main
+  111  git pull origin main
+  112  git pull origin main
+  113  git branch javascript-and-json
+  114  git switch javascript-and-json
+  115  git add javascript-and-json
+  116  git commit -m 'starting files'
+  117  git status
+  118  git add javascript-and-json
+  119  git status
+  120  git commit -m 'finished'
+  121  git push origin javascript-and-json
+  122  git status
+  123  git add javascript-and-json
+  124  git commit -m 'changed code to use jsString'
+  125  git push javascript-and-json
+  126  git push origin javascript-and-json
+  127  git switch main
+  128  git pull origin main
+  129  git branch javascript-local-storage
+  130  git status
+  131  git switch javascript-local-storage
+  132  git add javascript-local-storage
+  133  git status
+  134  git commit -m 'starting files'
+  135  git add javascript-local-storage
+  136  git status
+  137  git commit -m 'javascript-local-storage'
+  138  git push origin javascript-local-storage
+  139  git swiych main
+  140  git switch main
+  141  git pull origin main
+  142  git branch practice-interview-problem
+  143  git switch practice-interview-problem
+  144  git status
+  145  git add .
+  146  git commit -m 'deleted files'
+  147  git switch main
+  148  git status
+  149  git branch javascript-custom-methods
+  150  git status
+  151  git switch javascript-custom-methods
+  152  git status
+  153  git status
+  154  git add .
+  155  git status
+  156  git commit -m 'starting files'
+  157  git status
+  158  git add .
+  159  git status
+  160  git commit -m 'finished'
+  161  git push origin javascript-cutom-methods
+  162  git push origin javascript-custom-methods
+  163  git switch
+  164  git switch main
+  165  git pull origin main
+  166  git add javascript-this
+  167  git branch javascript-this
+  168  git status
+  169  git .
+  170  git add .
+  171  git status
+  172  git commit -m 'starting files'
+  173  git switch javascript-this
+  174  git switch main
+  175  git status
+  176  git commit -m 'wrong branch'
+  177  git add .
+  178  git commit -m 'wrong branch'
+  179  git switch javascript-this
+  180  git add .
+  181  git status
+  182  git commit -m 'starting files'
+  183  git status
+  184  git add .
+  185  git status
+  186  git commit -m 'finished'
+  187  git status
+  188  git push origin javascript-this
+  189  git switch main
+  190  git status
+  191  git pull origin main
+  192  git status
+  193  git switch javascript-this
+  194  git status
+  195  git status
+  196  git switch main
+  197  git pull
+  198  git pull origin main
+  199  git status
+  200  git pull origin main
+  201  git fetch --all
+  202  git branch backup-master
+  203  git reset --hard origin/main
+  204  git branch list
+  205  git list
+  206  git branch --delete backup-master
+  207  git branch -D backup-master
+  208  git status
+  209  git pull origin main
+  210  git branch javascript-prototypes
+  211  git switch javascript-prototypes
+  212  git add javascript-prototypes
+  213  git status
+  214  git add .
+  215  git status
+  216  git commit -m 'starting files'
+  217  git statu
+  218  git status
+  219  git status
+  220  git add .
+  221  git commit -m 'finished'
+  222  git push origin javascript-prototypes
+  223  git switch main
+  224  git pull origin main
+  225  git branch javascript-constructors
+  226  git switch javascript-constructors
+  227  git status
+  228  git add .
+  229  git commit -m 'starting files'
+  230  git status
+  231  git add .
+  232  git commit -m 'finished'
+  233  git push origin javascript-constructors
+  234  git status
+  235  git add .
+  236  git status
+  237  git push origin javascript-constructors
+  238  git status
+  239  git commit -m 'fixed comments'
+  240  git status
+  241  git push origin javascript-constructors
+  242  git switch main
+  243  git pull origin main
+  244  git branch javascript-bank
+  245  git switch javascript-bank
+  246  git status
+  247  git add .
+  248  git commit -m 'starting'
+  249  git status
+  250  git add .
+  251  git commit -m 'finished'
+  252  git push origin javascript-bank
+  253  git switch main
+  254  git branch es6-classes
+  255  git switch es6-classes
+  256  git status
+  257  git add .
+  258  git commit -m 'starting files'
+  259  git status
+  260  git add .
+  261  git commit -m 'finished'
+  262  git add .
+  263  git commit -m 'had to log to take error out'
+  264  git push origin es6-classes
+  265  git status
+  266  git add .
+  267  git status
+  268  git commit -m 'fixed issues with super'
+  269  git push origin es6-classes
+  270  git switch main
+  271  git pull origin main
+  272  git status
+  273  git branch javascript-timers
+  274  git switch javascript-timers
+  275  git status
+  276  git add .
+  277  git commit -m 'starting files'
+  278  git status
+  279  git add .
+  280  git commit -m 'finished
+  281  git commit -m 'finished'
+  282  git status
+  283  git commit -m 'finished'
+  284  git push origin javascript-timers
+  285  git status
+  286  git add .
+  287  git commit -m 'took second function outside to setInterval.
+  288  git commit -m 'took second function outside to setInterval.'
+  289  git commit -m 'took second function outside to setInterval.'
+  290  git push origin javascript-timers
+  291  git status
+  292  git add .
+  293  git commit -m 'took out extra setInterval'
+  294  git status
+  295  git push origin javascript-timers
+  296  git switch main
+  297  git pull origin main
+  298  git pull origin main
+  299  git pull origin main
+  300  git status
+  301  git branch javascript-carousel
+  302  git switch javascript-carousel
+  303  git stauts
+  304  git status
+  305  git add javascript-carousel
+  306  git status
+  307  git commit -m 'starting files'
+  308  git status
+  309  git add .
+  310  git commit -m 'finished'
+  311  git push origin javascript-carousel
+  312  git switch main
+  313  git pull origin main
+  314  git branch es6-template-literals
+  315  git switch es6-template-literals
+  316  git add .
+  317  git commit -m 'starting files'
+  318  git status
+  319  git add .
+  320  git commit -m 'finished'
+  321  git push es6-templace-literals
+  322  git push origin es6-template-literals
+  323  git status
+  324  git add .
+  325  git commit -m changed 'assigned string interpolation to variable'
+  326  git commit -m 'assigned string interpolation to variable'
+  327  git push origin es6-template-literals
+  328  git status
+  329  git switch main
+  330  git pull origin main
+  331  git status
+  332  git add http-messages
+  333  git branch http-messages
+  334  git switch http-messages
+  335  git add http-messages
+  336  get https://example.com
+  337  http http://example.com
+  338  http verbose http://example.com
+  339  clear
+  340  http --verbose http://example.com
+  341  clear
+  342  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+  343  http --body GET https://example.com > http-messages/index.html
+  344  git status
+  345  git add .
+  346  git commit -m 'finished'
+  347  git push origin 
+  348  git push origin http-messages
+  349  git switch main
+  350  git pull origin main
+  351  git switch javascript-carousel
+  352  git status
+  353  git add .
+  354  git commit -m 'switched five to length of pictures'
+  355  git push origin javascript-carousel
+  356  git switch main
+  357  git pull origin main 
+  358  git branch javascript-ajax
+  359  git switch javascript-ajax
+  360  git add javascript-ajax
+  361  git status
+  362  git commit -m 'starting files'
+  363  git status
+  364  git add .
+  365  git commit -m 'finished'
+  366  git push origin javascript-ajax
+  367  git switch main
+  368  git switch main
+  369  git pull origin main
+  370  git switch main
+  371  git status
+  372  git status
+  373  git status
+  374  git add .
+  375  git commit -m 'had to'
+  376  git switch main
+  377  git pull origin main
+  378  clear
+  379  http GET https://api.pokemontcg.io/v2/cards/<id>
+  380  http GET https://api.pokemontcg.io/v2/cards/<id>
+  381  http GET https://api.pokemontcg.io/v2/cards/<xy1-1>
+  382  GET https://api.pokemontcg.io/v2/cards
+  383  http GET https://api.pokemontcg.io/v2/cards
+  384  http GET https://api.pokemontcg.io/v2/cards/
+  385  http GET https://api.pokemontcg.io/v2/cards/sv1
+  386  http GET https://api.pokemontcg.io/v2/sets/1
+  387  http GET https://api.pokemontcg.io/v2/sets/
+  388  http GET https://api.pokemontcg.io/v2/cards/4
+  389  http GET https://api.pokemontcg.io/v2/cards/
+  390  git pull origin
+  391  git pull origin main
+  392  npm --save-dev prettier eslint-config-prettier
+  393  npm --save-dev prettier eslint-config-prettier
+  394  npm install  --save-dev prettier eslint-config-prettier
+  395  npm install --save-dev stylelint@latest
+  396  npm install --save-dev stylelint@latest --legacy-peer-deps
+  397  git status
+  398  git add .
+  399  git commit -m 'changed linter to prettier'
+  400  npm install eslint-plugin-import@latest --save-dev
+  401  npm install eslint-plugin-import@latest --save-dev
+  402  npm install
+  403  git commit -m 'changed linter to prettier'
+  404  git push origin main
+  405  git add .
+  406  git commit -m 'changed linter versions'
+  407  git push origin main
+  408  git branch es6-destructuring
+  409  git switch es6-destructuring
+  410  git add es6-destructuring
+  411  git commit -m "new files"
+  412  git add .
+  413  git commit -m 'finished'
+  414  git push origin es6-destructuring
+  415  git add .
+  416  git commit -m 'answered quiz questions'
+  417  git push origin es6-destructuring
+  418  git status
+  419  git add .
+  420  git commit -m 
+  421  git commit -m 'changed names to be same as book1 names'
+  422  git push origin es6-destructuring
+  423  git add .
+  424  git commit -m 'moved 3 declarations into one line'
+  425  git push origin es6-destructuring
+  426  git switch main
+  427  git pull origin main
+  428  git branch es6-arrow-functions
+  429  git switch es6-arrow-functions
+  430  git status
+  431  git add
+  432  git add .
+  433  git commit -m 'starting files'
+  434  git status
+  435  git add .
+  436  git commit -m 'finished'
+  437  git push origin es6-arrow-functions
+  438  git switch main
+  439  git pull origin main
+  440  git branch es6-operators
+  441  git switch es6-operators
+  442  git add .
+  443  git commit -m 'added starting files'
+  444  git status
+  445  git add .
+  446  git commit -m 'finished'
+  447  git push origin es6-operators
+  448  git add .
+  449  git commit -m 'changed quiz answers'
+  450  git push origin es6-operators
+  451  git switch
+  452  git switch main
+  453  git pull origin main
+  454  git add array-filter
+  455  git branch array-filter
+  456  git status
+  457  git switch array-filter
+  458  git branch -m array-filter array-methods
+  459  git add .
+  460  git commit -m 'starting files'
+  461  git status
+  462  git add .
+  463  git commit -m 'finished'
+  464  git push array-methods
+  465  git push origin array-methods
+  466  git status
+  467  git status
+  468  git add .
+  469  git commit -m 'added dollar sign'
+  470  git push origin array-methods
+  471  git status
+  472  git add .
+  473  git commit -m 'changed method of forEach to not use reverse method'
+  474  git push origin array-methods
+  475  git add .
+  476  git commit -m 'changed index to array length - 1'
+  477  git push origin array-methods
+  478  git add .
+  479  git commit -m 'fixed quiz'
+  480  git push origin array-methods
+  481  git switch main
+  482  git pull origin main
+  483  git branch command-line-basics
+  484  git switch command-line-basics
+  485  git add ,
+  486  git add .
+  487  git commit -m 'starting files'
+  488  cd command-line-basics
+  489  man man
+  490  man cat
+  491  cat f - laziness.txt
+  492  cd command-line0basics
+  493  cd command-line-basics
+  494  cat
+  495  cd command-line-basics
+  496  man cat
+  497  man cat laziness.txt
+  498  man cat
+  499  cat impatience.txt
+  500  cat laziness.txt
+  501  cat hubris.txt
+  502  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  503  cat three-virtues.txt
+  504  man ls
+  505  ls lfz-staff
+  506  ls -a lfx-staff
+  507  ls -a lfz-staff
+  508  ls -a -F lfz-staff
+  509  ls -aF lfz-staff > lfz-staff/contents.txt
+  510  cat lfz-staff/contents.txt
+  511  man pwd
+  512  pwd
+  513  pwd > i-was-here.txt
+  514  ls
+  515  cat i-was-here.txt
+  516  man echo
+  517  echo 'hello, world'
+  518  echo 'Hello, World!' > hello.txt
+  519  man touch
+  520  touch > tag-youre-it.txt
+  521  touch > snoot/boop.txt
+  522  ls snoot/
+  523  cat snoot/boop.txt
+  524  man mkdir
+  525  mkdir parent
+  526  mkdir -p parent/child
+  527  mkdir -p parent/child/grandchild
+  528  touch  > parent/child/grandchild/.gitkeep
+  529  ls parent
+  530  ls parent/
+  531  ls parent/child
+  532  touch .gitkeep
+  533  touch .gitkeep
+  534  touch .gitkeep > parent/child/grandchild
+  535  touch parent/child/grandchild > .gitkeep
+  536  ls -a parent/child/grandchild
+  537  man mv
+  538  mv (pokemans) pokemon
+  539  mv (pokiemans) pokemon
+  540  mv pokiemans
+  541  mv pokiemans pokemon
+  542  ls pokemon
+  543  man rm
+  544  rm lol.txt
+  545  ls lol.txt
+  546  rm -r kill-me/
+  547  ls kill-me/
+  548  man cp
+  549  cp and-then.txt
+  550  cp and-then.txt no-and-then.txt
+  551  man history
+  552  man history
+  553  history
+  554  history > command-history.txt
