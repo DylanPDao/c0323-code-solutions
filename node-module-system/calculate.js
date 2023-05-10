@@ -1,20 +1,20 @@
 import add from './add.js';
 import divide from './divide.js';
-import multiple from './multiply.js';
+import multiply from './multiply.js';
 import subtract from './subtract.js';
 
-const arg1 = Number(process.argv[2]);
-const arg2 = process.argv[3];
-const arg3 = Number(process.argv[4]);
+const integer1 = Number(process.argv[2]);
+const operator = process.argv[3];
+const integer2 = Number(process.argv[4]);
 
-if (arg2 === 'plus') {
-  console.log('result: ', add(arg1, arg3));
-} else if (arg2 === 'minus') {
-  console.log('result: ', subtract(arg1, arg3));
-} else if (arg2 === 'times') {
-  console.log('result: ', multiple(arg1, arg3));
-} else if (arg2 === 'over') {
-  console.log('result: ', divide(arg1, arg3));
+if (operator === 'plus') {
+  console.log('result: ', add(integer1, integer2));
+} else if (operator === 'minus') {
+  console.log('result: ', subtract(integer1, integer2));
+} else if (operator === 'times') {
+  console.log('result: ', multiply(integer1, integer2));
+} else if (operator === 'over') {
+  console.log('result: ', divide(integer1, integer2));
 } else {
   console.log('write it right');
 }
