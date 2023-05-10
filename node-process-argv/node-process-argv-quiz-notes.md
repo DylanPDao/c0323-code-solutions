@@ -5,12 +5,13 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is the `process` object in a Node.js program?
-
+  global object that is always available
 - How do you access the `process` object in a Node.js program?
-
+  It can also be explicitly accessed using require():
 - What is the data type of `process.argv` in Node.js?
-
+  an array containing the command line arguments
 - How do you access the command line arguments in a Node.js program?
+  argv[index]
 
 ## Notes
 
