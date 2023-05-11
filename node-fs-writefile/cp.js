@@ -5,7 +5,7 @@ const newFileName = process.argv[3];
 
 async function copy() {
   try {
-    const originalContents = await readFile(fileToCopy, 'utf8');
+    const originalContents = await readFile(fileToCopy);
     await writeFile(newFileName, originalContents);
   } catch (err) {
     console.error(err);
