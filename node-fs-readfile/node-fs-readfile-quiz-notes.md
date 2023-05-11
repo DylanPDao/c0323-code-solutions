@@ -7,12 +7,13 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is a directory?
 
 - What is a relative file path?
-
+  folder is in same pwd
 - What is an absolute file path?
-
+  hard file path, exactly where it is
 - What module does Node.js include for manipulating the file system?
-
+  node:fs
 - What method is available in the `node:fs` module for reading data from a file?
+  read, readfile, readline
 
 ## Notes
 
