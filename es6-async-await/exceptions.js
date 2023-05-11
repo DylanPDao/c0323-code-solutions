@@ -36,16 +36,20 @@ async function throwSeveral() {
 async function throwChained() {
   try {
     const response = await fetch('foo-chained', true);
-    console.log(elapsed(), 'fetchSeveral1:', response);
+    console.log(elapsed(), 'fetchChained1:', response);
     const response1 = await fetch(response, true);
-    console.log(elapsed(), 'fetchSeveral2:', response1);
+    console.log(elapsed(), 'fetchChained2:', response1);
     const response2 = await fetch(response1, true);
-    console.log(elapsed(), 'fetchSeveral3:', response2);
+    console.log(elapsed(), 'fetchChained3:', response2);
   } catch (error) {
-    console.error(elapsed(), 'throwSeveral Error:', error.message);
+    console.error(elapsed(), 'throwChained Error:', error.message);
   }
 }
 
-throwOnce()
-  .then(() => throwSeveral())
-  .then(() => throwChained());
+try {
+  await throwOnce();
+  await throwSeveral();
+  await throwChained();
+} catch (error) {
+  console.error(elapsed(), 'Thrown Error:', error.message);
+}
