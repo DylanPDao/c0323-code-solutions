@@ -1,7 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
 const [, , ...argList] = process.argv;
-console.log(argList);
 
 async function readAny(fileName) {
   try {
