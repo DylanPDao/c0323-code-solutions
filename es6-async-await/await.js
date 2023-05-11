@@ -5,36 +5,39 @@ import fetch from './fetch.js';
 const startTime = Date.now();
 const elapsed = () => `${Math.round((Date.now() - startTime) / 1000)}s -`;
 
-function fetchOnce() {
-  return fetch('foo/bar.html').then((msg) =>
-    console.log(elapsed(), 'fetchOnce:', msg)
-  );
+async function fetchOnce() {
+  try {
+    const response = await fetch('foo/bar.html');
+    console.log(elapsed(), 'fetchOnce:', response);
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
-function fetchSeveral() {
-  return fetch('foo1/bar.html')
-    .then((msg) => {
-      console.log(elapsed(), 'fetchSeveral1:', msg);
-      return fetch('foo2/bar.html');
-    })
-    .then((msg) => {
-      console.log(elapsed(), 'fetchSeveral2:', msg);
-      return fetch('foo3/bar.html');
-    })
-    .then((msg) => console.log(elapsed(), 'fetchSeveral3:', msg));
+async function fetchSeveral() {
+  try {
+    const response = await fetch('foo/bar.html');
+    console.log(elapsed(), 'fetchSeveral1:', response);
+    const response1 = await fetch('foo/bar.html');
+    console.log(elapsed(), 'fetchSeveral2:', response1);
+    const response2 = await fetch('foo/bar.html');
+    console.log(elapsed(), 'fetchSeveral3:', response2);
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
-function fetchChained() {
-  return fetch('foo-chain/bar.html')
-    .then((msg1) => {
-      console.log(elapsed(), 'fetchChained1:', msg1);
-      return fetch(msg1);
-    })
-    .then((msg2) => {
-      console.log(elapsed(), 'fetchChained2:', msg2);
-      return fetch(msg2);
-    })
-    .then((msg3) => console.log(elapsed(), 'fetchChained3:', msg3));
+async function fetchChained() {
+  try {
+    const response = await fetch('foo/bar.html');
+    console.log(elapsed(), 'fetchChained1:', response);
+    const response1 = await fetch(response);
+    console.log(elapsed(), 'fetchChained2:', response1);
+    const response2 = await fetch(response1);
+    console.log(elapsed(), 'fetchChained3:', response2);
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 fetchOnce()

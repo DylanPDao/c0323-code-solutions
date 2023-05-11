@@ -5,50 +5,45 @@ import fetch from './fetch.js';
 const startTime = Date.now();
 const elapsed = () => `${Math.round((Date.now() - startTime) / 1000)}s -`;
 
-function throwOnce() {
+async function throwOnce() {
   // Note: In the `catch` we are logging just `error.message` for illustration
   // purposes. In actual code you will want to log the entire error so that
   // you get the stack trace.
-  return fetch('foo', true)
-    .then((msg) => console.log(elapsed(), 'throwOnce:', msg))
-    .catch((error) =>
-      console.log(elapsed(), 'throwOnce Error:', error.message)
-    );
+  try {
+    const response = await fetch('foo', true);
+    console.log(elapsed(), 'fetchOne:', response);
+  } catch (error) {
+    console.error(elapsed(), 'throwOnce Error:', error.message);
+  }
 }
 
-function throwSeveral() {
+async function throwSeveral() {
   // Note: In the `catch` we are logging just `error.message` for illustration
   // purposes. In actual code you will want to log `error` so that
   // you get the stack trace.
-  return fetch('foo1', true)
-    .then((msg) => {
-      console.log(elapsed(), 'throwSeveral1:', msg);
-      return fetch('foo2', true);
-    })
-    .then((msg) => {
-      console.log(elapsed(), 'throwSeveral2:', msg);
-      return fetch('foo3', true);
-    })
-    .then((msg) => console.log(elapsed(), 'throwSeveral3:', msg))
-    .catch((error) =>
-      console.log(elapsed(), 'throwSeveral Error:', error.message)
-    );
+  try {
+    const response = await fetch('foo1', true);
+    console.log(elapsed(), 'fetchSeveral1:', response);
+    const response1 = await fetch('foo2', true);
+    console.log(elapsed(), 'fetchSeveral2:', response1);
+    const response2 = await fetch('foo3', true);
+    console.log(elapsed(), 'fetchSeveral3:', response2);
+  } catch (error) {
+    console.error(elapsed(), 'throwSeveral Error:', error.message);
+  }
 }
 
-function throwChained() {
-  return fetch('foo-chain', true)
-    .then((msg1) => {
-      console.log(elapsed(), 'throwChained1:', msg1);
-      return fetch(msg1, true);
-    })
-    .then((msg2) => {
-      console.log(elapsed(), 'throwChained2:', msg2);
-      return fetch(msg2, true);
-    })
-    .then((msg3) => console.log(elapsed(), 'throwChained3:', msg3))
-    .catch((error) =>
-      console.log(elapsed(), 'throwChained Error:', error.message)
-    );
+async function throwChained() {
+  try {
+    const response = await fetch('foo-chained', true);
+    console.log(elapsed(), 'fetchSeveral1:', response);
+    const response1 = await fetch(response, true);
+    console.log(elapsed(), 'fetchSeveral2:', response1);
+    const response2 = await fetch(response1, true);
+    console.log(elapsed(), 'fetchSeveral3:', response2);
+  } catch (error) {
+    console.error(elapsed(), 'throwSeveral Error:', error.message);
+  }
 }
 
 throwOnce()
