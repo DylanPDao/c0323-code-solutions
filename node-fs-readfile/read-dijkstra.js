@@ -1,11 +1,9 @@
-import { open } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 
 async function readIt() {
   try {
-    const file = await open('./dijkstra.txt');
-    for await (const line of file.readLines()) {
-      console.log(line);
-    }
+    const file = await readFile('./dijkstra.txt/', 'utf-8');
+    await console.log(file);
   } catch (error) {
     console.log(error);
   }

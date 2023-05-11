@@ -1,13 +1,11 @@
-import { open } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 
 const arg1 = process.argv[2];
 
 async function readAny(fileName) {
   try {
-    const file = await open(fileName);
-    for await (const line of file.readLines()) {
-      console.log(line);
-    }
+    const file = await readFile(fileName, 'utf-8');
+    await console.log(file);
   } catch (error) {
     console.log(error);
   }
