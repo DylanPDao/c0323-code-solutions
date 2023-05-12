@@ -22,19 +22,31 @@ async function create(str) {
   notes[key] = str;
   parsedData.nextId++;
   const jsonString = JSON.stringify(parsedData, null, 2);
-  await writeFile('data.json', jsonString);
+  try {
+    await writeFile('data.json', jsonString);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 async function update() {
   notes[arg2] = arg3;
   const jsonString = JSON.stringify(parsedData, null, 2);
-  await writeFile('data.json', jsonString);
+  try {
+    await writeFile('data.json', jsonString);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 async function del(str) {
   delete notes[arg2];
   const jsonString = JSON.stringify(parsedData, null, 2);
-  await writeFile('data.json', jsonString);
+  try {
+    await writeFile('data.json', jsonString);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 function read() {
