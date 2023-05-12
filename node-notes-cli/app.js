@@ -17,51 +17,54 @@ try {
   console.error('Thrown Error: ', err);
 }
 
-async function create(str) {
-  const key = parsedData.nextId;
-  notes[key] = str;
-  parsedData.nextId++;
+async function storeIt() {
   const jsonString = JSON.stringify(parsedData, null, 2);
   try {
     await writeFile('data.json', jsonString);
   } catch (err) {
     console.error(err);
   }
+}
+
+async function create() {
+  const key = parsedData.nextId;
+  notes[key] = arg2;
+  parsedData.nextId++;
+  storeIt();
 }
 
 async function update() {
-  notes[arg2] = arg3;
-  const jsonString = JSON.stringify(parsedData, null, 2);
-  try {
-    await writeFile('data.json', jsonString);
-  } catch (err) {
-    console.error(err);
+  if (notes[arg2] !== undefined) {
+    notes[arg2] = arg3;
+  } else {
+    console.log('That note does not exist! Try again.');
   }
+  storeIt();
 }
 
 async function del(str) {
-  delete notes[arg2];
-  const jsonString = JSON.stringify(parsedData, null, 2);
-  try {
-    await writeFile('data.json', jsonString);
-  } catch (err) {
-    console.error(err);
+  if (notes[arg2] !== undefined) {
+    delete notes[arg2];
+  } else {
+    console.log('That note does not exist! Try again.');
   }
+  storeIt();
 }
 
 function read() {
   for (const key in notes) {
-    const theKey = Number(key);
+    const theKey = key;
     const theValue = notes[key];
     console.log(`${theKey}: ${theValue}`);
   }
 }
+
 switch (arg) {
   case 'read':
     read();
     break;
   case 'create':
-    create(arg2);
+    create();
     break;
   case 'delete':
     del();
