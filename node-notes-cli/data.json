@@ -1,0 +1,9 @@
+{
+  "nextId": 40,
+  "notes": {
+    "11": "updated note yeet yaur",
+    "19": "Prototypal inheritance is how JavaScript objects delegate behavior.",
+    "34": "A closure is formed when a function retains access to variables in its lexical scope.",
+    "36": "this is greaaaat"
+  }
+}
