@@ -5,8 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is an API endpoint?
-
+  exactly where on website you're looking for
 - What is the appropriate `Content-Type` header for HTTP messages that contain JSON in their bodies?
+  JSON
 
 ## Notes
 
