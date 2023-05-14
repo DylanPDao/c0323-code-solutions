@@ -31,7 +31,7 @@ app.get('/api/grades', (req, res) => {
   res.json(gradesArr);
 });
 
-app.get('/api/grades/:id', (req, res) => {
+app.delete('/api/grades/:id', (req, res) => {
   const { id } = req.params;
   if (!grades[id]) {
     res.send(`Id ${id} does not exist`);
