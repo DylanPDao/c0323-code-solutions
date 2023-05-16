@@ -6,14 +6,14 @@ app.use(express.json());
 // errors array
 const errorArr = {
   negative: { error: 'Id must be a positive integer.' },
-  noId: { error: 'Cannot find note with id.' },
+  noId: (id) => ({ error: `Cannot find note with id ${id}.` }),
   empty: { error: 'Content cannot be empty.' },
   unknown: { error: 'An unexpected error occurred.' },
 };
 
 async function readData() {
   const dataJson = await readFile('data.json', 'utf8');
-  return JSON.readData(dataJson);
+  return JSON.parse(dataJson);
 }
 
 // read all entries function and route
@@ -39,15 +39,13 @@ async function readOne(id) {
 }
 
 app.get('/api/notes/:id', async (req, res) => {
-  let { id } = req.params;
-  id = Number(id);
+  const { id } = req.params;
   if (id < 0) {
-    res.status(400).json(errorArr[0]);
+    res.status(400).json(errorArr.negative);
   } else {
     const oneNote = await readOne(id);
     if (oneNote === undefined) {
-      errorArr[1].error = `Cannot find note with id ${id}.`;
-      res.status(404).json(errorArr[1]);
+      res.status(404).json(errorArr.noId(id));
     } else {
       res.status(200).json(oneNote);
     }
@@ -55,7 +53,7 @@ app.get('/api/notes/:id', async (req, res) => {
 });
 
 // update data.json
-async function saveIt(data) {
+async function saveNotes(data) {
   const jsonString = JSON.stringify(data, null, 2);
   await writeFile('data.json', jsonString);
 }
@@ -67,21 +65,21 @@ async function writeNewNote(contentObj) {
   contentObj.id = data.nextId;
   notes[data.nextId] = contentObj;
   data.nextId++;
-  await saveIt(data);
+  await saveNotes(data);
+  return notes[data.nextId - 1];
 }
 
 app.post('/api/notes', async (req, res) => {
   const contentObj = req.body;
   if (!contentObj.content) {
-    res.status(400).json(errorArr[2]);
+    res.status(400).json(errorArr.empty);
   } else {
     try {
-      await writeNewNote(contentObj);
-      const data = await readData();
-      res.status(201).json(data.notes[data.nextId - 1]);
+      const newNote = await writeNewNote(contentObj);
+      res.status(201).json(newNote);
     } catch (err) {
       console.error(err);
-      res.status(500).json(errorArr[3]);
+      res.status(500).json(errorArr.unknown);
     }
   }
 });
@@ -90,7 +88,7 @@ app.post('/api/notes', async (req, res) => {
 async function deleteNote(id) {
   const data = await readData();
   delete data.notes[id];
-  await saveIt(data);
+  await saveNotes(data);
 }
 
 app.delete('/api/notes/:id', async (req, res) => {
@@ -100,15 +98,14 @@ app.delete('/api/notes/:id', async (req, res) => {
   } else {
     const oneNote = await readOne(id);
     if (oneNote === undefined) {
-      errorArr[1].error = `Cannot find note with id ${id}.`;
-      res.status(404).json(errorArr[1]);
+      res.status(404).json(errorArr.noId(id));
     } else {
       try {
         await deleteNote(id);
-        res.status(204).send();
+        res.sendStatus(204);
       } catch (err) {
         console.error(err);
-        res.status(500).json(errorArr[3]);
+        res.status(500).json(errorArr.unknown);
       }
     }
   }
@@ -118,7 +115,7 @@ app.delete('/api/notes/:id', async (req, res) => {
 async function updateNote(id, contentObj) {
   const data = await readData();
   data.notes[id].content = contentObj.content;
-  await saveIt(data);
+  await saveNotes(data);
 }
 
 app.put('/api/notes/:id', async (req, res) => {
@@ -127,12 +124,11 @@ app.put('/api/notes/:id', async (req, res) => {
   if (id < 0) {
     res.status(400).json(errorArr[0]);
   } else if (!contentObj.content) {
-    res.status(400).json(errorArr[2]);
+    res.status(400).json(errorArr.empty);
   } else {
     const oneNote = await readOne(id);
     if (oneNote === undefined) {
-      errorArr[1].error = `Cannot find note with id ${id}.`;
-      res.status(404).json(errorArr[1]);
+      res.status(404).json(errorArr.noId(id));
     } else {
       try {
         await updateNote(id, contentObj);
@@ -140,7 +136,7 @@ app.put('/api/notes/:id', async (req, res) => {
         res.status(200).json(data.notes[id]);
       } catch (err) {
         console.error(err);
-        res.status(500).json(errorArr[3]);
+        res.status(500).json(errorArr.unknown);
       }
     }
   }
