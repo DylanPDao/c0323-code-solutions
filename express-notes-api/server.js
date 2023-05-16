@@ -4,22 +4,22 @@ const app = express();
 app.use(express.json());
 
 // errors array
-const errorArr = [
-  { error: 'Id must be a positive integer.' },
-  { error: 'Cannot find note with id.' },
-  { error: 'Content cannot be empty.' },
-  { error: 'An unexpected error occurred.' },
-];
+const errorArr = {
+  negative: { error: 'Id must be a positive integer.' },
+  noId: { error: 'Cannot find note with id.' },
+  empty: { error: 'Content cannot be empty.' },
+  unknown: { error: 'An unexpected error occurred.' },
+};
 
-async function parse() {
+async function readData() {
   const dataJson = await readFile('data.json', 'utf8');
-  const data = JSON.parse(dataJson);
+  const data = JSON.readData(dataJson);
   return data;
 }
 
 // read all entries function and route
 async function readAll() {
-  const data = await parse();
+  const data = await readData();
   const notes = data.notes;
   const notesArr = [];
   for (const key in notes) {
@@ -33,9 +33,9 @@ app.get('/api/notes', async (req, res) => {
   res.status(200).json(allNotes);
 });
 
-// read by ID function and
+// read by ID function and route
 async function readOne(id) {
-  const data = await parse();
+  const data = await readData();
   const notes = data.notes;
   return notes[id];
 }
@@ -64,7 +64,7 @@ async function saveIt(data) {
 
 // add new note
 async function writeNewNote(contentObj) {
-  const data = await parse();
+  const data = await readData();
   const notes = data.notes;
   contentObj.id = data.nextId;
   notes[data.nextId] = contentObj;
@@ -79,7 +79,7 @@ app.post('/api/notes', async (req, res) => {
   } else {
     try {
       await writeNewNote(contentObj);
-      const data = await parse();
+      const data = await readData();
       res.status(201).json(data.notes[data.nextId - 1]);
     } catch (err) {
       console.error(err);
@@ -90,7 +90,7 @@ app.post('/api/notes', async (req, res) => {
 
 // delete note by id
 async function deleteNote(id) {
-  const data = await parse();
+  const data = await readData();
   const notes = data.notes;
   delete notes[id];
   await saveIt(data);
@@ -119,7 +119,7 @@ app.delete('/api/notes/:id', async (req, res) => {
 
 // update note
 async function updateNote(id, contentObj) {
-  const data = await parse();
+  const data = await readData();
   const notes = data.notes;
   notes[id].content = contentObj.content;
   await saveIt(data);
@@ -140,7 +140,7 @@ app.put('/api/notes/:id', async (req, res) => {
     } else {
       try {
         await updateNote(id, contentObj);
-        const data = await parse();
+        const data = await readData();
         res.status(200).json(data.notes[id]);
       } catch (err) {
         console.error(err);
