@@ -13,8 +13,7 @@ const errorArr = {
 
 async function readData() {
   const dataJson = await readFile('data.json', 'utf8');
-  const data = JSON.readData(dataJson);
-  return data;
+  return JSON.readData(dataJson);
 }
 
 // read all entries function and route
@@ -36,8 +35,7 @@ app.get('/api/notes', async (req, res) => {
 // read by ID function and route
 async function readOne(id) {
   const data = await readData();
-  const notes = data.notes;
-  return notes[id];
+  return data.notes[id];
 }
 
 app.get('/api/notes/:id', async (req, res) => {
@@ -91,8 +89,7 @@ app.post('/api/notes', async (req, res) => {
 // delete note by id
 async function deleteNote(id) {
   const data = await readData();
-  const notes = data.notes;
-  delete notes[id];
+  delete data.notes[id];
   await saveIt(data);
 }
 
@@ -120,8 +117,7 @@ app.delete('/api/notes/:id', async (req, res) => {
 // update note
 async function updateNote(id, contentObj) {
   const data = await readData();
-  const notes = data.notes;
-  notes[id].content = contentObj.content;
+  data.notes[id].content = contentObj.content;
   await saveIt(data);
 }
 
