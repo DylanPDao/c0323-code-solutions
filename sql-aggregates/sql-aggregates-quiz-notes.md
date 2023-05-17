@@ -5,8 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are some examples of aggregate functions?
-
+  max(), avg(), count, min(), sum(), every()
 - What is the purpose of a `group by` clause?
+  separates rows into groups
 
 ## Notes
 
