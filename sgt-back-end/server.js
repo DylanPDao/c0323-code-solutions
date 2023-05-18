@@ -22,21 +22,25 @@ const errorObj = {
 };
 
 // check if ID is valid function
-function validIdCheck(id) {
+function invalidIdCheck(id) {
   if (id < 0 || Number.isNaN(id) || !Number.isInteger(id)) {
     return true;
+  } else {
+    return false;
   }
 }
 
 // check if content is empty
-function validContentCheck(course, name, score) {
+function hasInvalidConent(content) {
+  let { name, course, score } = content;
+  score = Number(score);
   if (!course) {
     return 'course';
   }
   if (!name) {
     return 'name';
   }
-  if (!score || score < 0 || score > 101) {
+  if (!score || score < 0 || score > 101 || invalidIdCheck(score)) {
     return 'score';
   }
 }
@@ -65,11 +69,7 @@ app.get('/api/grades', async (req, res) => {
 app.post('/api/grades', async (req, res) => {
   try {
     const content = req.body;
-    const invalidContent = validContentCheck(
-      content.course,
-      content.name,
-      content.score
-    );
+    const invalidContent = hasInvalidConent(content);
     if (invalidContent) {
       res.status(400).json(errorObj.empty(invalidContent));
       return;
@@ -98,15 +98,11 @@ app.put('/api/grades/:gradeId', async (req, res) => {
   try {
     const gradeId = Number(req.params.gradeId);
     const content = req.body;
-    if (validIdCheck(gradeId)) {
+    if (invalidIdCheck(gradeId)) {
       res.status(404).json(errorObj.negative);
       return;
     }
-    const invalidContent = validContentCheck(
-      content.course,
-      content.name,
-      content.score
-    );
+    const invalidContent = hasInvalidConent(content);
     if (invalidContent) {
       res.status(400).json(errorObj.empty(invalidContent));
       return;
@@ -135,7 +131,7 @@ app.put('/api/grades/:gradeId', async (req, res) => {
 app.delete('/api/grades/:gradeId', async (req, res) => {
   try {
     const gradeId = Number(req.params.gradeId);
-    if (validIdCheck(gradeId)) {
+    if (invalidIdCheck(gradeId)) {
       res.status(404).json(errorObj.negative);
       return;
     }
@@ -162,7 +158,7 @@ app.delete('/api/grades/:gradeId', async (req, res) => {
 app.get('/api/grades/:gradeId', async (req, res) => {
   try {
     const gradeId = Number(req.params.gradeId);
-    if (validIdCheck(gradeId)) {
+    if (invalidIdCheck(gradeId)) {
       res.status(404).json(errorObj.negative);
       return;
     }
