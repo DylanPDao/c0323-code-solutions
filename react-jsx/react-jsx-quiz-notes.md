@@ -5,8 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is JSX?
-
+  javascript XML file
 - How does React use JSX to render components?
+  write html in javascript file then returns it when called
 
 ## Notes
 
