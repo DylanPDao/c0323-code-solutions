@@ -6,23 +6,13 @@ export default function ToggleButton() {
   function handleClick() {
     setClicked(!isClicked);
   }
-  if (isClicked) {
-    return (
-      <div className="container" onClick={handleClick}>
-        <div className="oval">
-          <div className="toggle-off"></div>
-        </div>
-        <p className="text">OFF</p>
+
+  return (
+    <div className="container" onClick={handleClick}>
+      <div className={isClicked ? 'oval' : 'oval green'}>
+        <div className={isClicked ? 'toggle-off' : 'toggle-on'}></div>
       </div>
-    );
-  } else {
-    return (
-      <div className="container" onClick={handleClick}>
-        <div className="oval green">
-          <div className="toggle-on"></div>
-        </div>
-        <p className="text">ON</p>
-      </div>
-    );
-  }
+      <p className="text">{isClicked ? 'OFF' : 'ON'}</p>
+    </div>
+  );
 }
