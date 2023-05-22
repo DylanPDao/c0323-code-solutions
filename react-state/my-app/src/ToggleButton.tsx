@@ -17,17 +17,11 @@ export default function ToggleButton({ text, color, text2, color2 }: Props) {
     console.log('after setter:', isClicked);
   }
 
-  if (!isClicked) {
-    return (
-      <button onClick={handleClick} style={{ backgroundColor: color }}>
-        {text}
-      </button>
-    );
-  } else {
-    return (
-      <button onClick={handleClick} style={{ backgroundColor: color2 }}>
-        {text2}
-      </button>
-    );
-  }
+  color = !isClicked ? color : color2;
+
+  return (
+    <button onClick={handleClick} style={{ backgroundColor: color }}>
+      {!isClicked ? text : text2}
+    </button>
+  );
 }
