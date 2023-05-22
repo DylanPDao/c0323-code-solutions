@@ -5,7 +5,7 @@ type Props = {
 };
 
 export default function CustomButton({ text }: Props) {
-  let [index, setClicked] = useState(0);
+  const [index, setClicked] = useState(0);
 
   function handleClick(): void {
     setClicked(index + 1);
