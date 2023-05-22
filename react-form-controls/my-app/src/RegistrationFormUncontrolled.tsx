@@ -15,15 +15,13 @@ export default function RegistrationFormUncontrolled() {
         alignItems: 'flex-end',
         margin: '2rem',
       }}>
-      <label htmlFor="username">
+      <label>
         Username: <input name="username" />
       </label>
-      <label htmlFor="password">
+      <label>
         Password: <input name="password" />
       </label>
-      <label>
-        <button type="submit">Submit</button>
-      </label>
+      <button type="submit">Submit</button>
     </form>
   );
 }

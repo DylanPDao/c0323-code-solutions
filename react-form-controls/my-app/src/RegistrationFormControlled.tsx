@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
 export default function RegistrationFormUncontrolled() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     console.log({ userName, password });
   }
@@ -17,25 +17,23 @@ export default function RegistrationFormUncontrolled() {
         flexDirection: 'column',
         alignItems: 'flex-end',
       }}>
-      <label htmlFor="username">
-        Username:{' '}
+      <label>
+        Username:
         <input
           name="username"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
       </label>
-      <label htmlFor="password">
-        Password:{' '}
+      <label>
+        Password:
         <input
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <label>
-        <button type="submit">Submit</button>
-      </label>
+      <button type="submit">Submit</button>
     </form>
   );
 }
