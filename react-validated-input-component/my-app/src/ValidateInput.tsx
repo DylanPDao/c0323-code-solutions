@@ -16,7 +16,7 @@ export default function ValidateInput() {
     (inputValueLength < 8 && inputValueLength > 0) || 'hidden';
   const noPassword = inputValueLength === 0 || 'hidden';
   const regexPass =
-    (inputValueLength > 8 && !regex.test(inputValue)) || 'hidden';
+    (inputValueLength >= 8 && !regex.test(inputValue)) || 'hidden';
 
   return (
     <form
