@@ -1,11 +1,11 @@
-import Accordian from './Container';
+import Accordion from './Accordion';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Accordian />
+        <Accordion />
       </header>
     </div>
   );
