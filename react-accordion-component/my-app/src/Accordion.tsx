@@ -1,21 +1,21 @@
 import { useState } from 'react';
 
 /**
- * function that returns an accordion menu
+ * An accordion that displays a list of items when it is clicked, only one can be shown at a time
  * @returns a JSX element
  */
 
 type PropsAccordion = {
-  languages: { name: string; text: string }[];
+  items: { name: string; text: string }[];
 };
 
-export default function Accordion({ languages }: PropsAccordion): JSX.Element {
+export default function Accordion({ items }: PropsAccordion): JSX.Element {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <>
       <AccordionComponents
-        count={languages}
+        count={items}
         onSelect={(e) => setActiveIndex(e)}
         activeKey={activeIndex}
       />
@@ -30,7 +30,7 @@ type PropsDrop = {
 };
 
 /**
- * Function to create layout if JSX element to be returned
+ * Renders an item card
  * @param text is the description of what the element is about
  * @param isActive passing useState from parent to child
  * @param onShow if number matches active useState, then this is what is shown to user
@@ -58,7 +58,7 @@ type PropsAccordionComp = {
 };
 
 /**
- * Gets value from array to create the elements
+ * Decides if item description is shown or not
  * @param count is how many objects are in the array
  * @param activeKey is to check if the activeIndex is the same, if so show this
  * @param onSelect passes the index up to parent
