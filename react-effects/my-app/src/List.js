@@ -15,10 +15,11 @@ export default function List() {
         setIsLoading(false);
       } catch (err) {
         setError(err);
+        setIsLoading(false);
       }
     }
     fetchData();
-  }, [error]);
+  }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
