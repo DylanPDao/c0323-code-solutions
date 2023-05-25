@@ -20,7 +20,7 @@ export default function Carousel({ images }: Prop) {
       setActiveIndex((activeIndex + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
-  });
+  }, [activeIndex, images.length]);
 
   return (
     <div className="container">
