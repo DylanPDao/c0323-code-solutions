@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+.indicator.is-on {
+  color: grey;
+}
+
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column-80 {
+  width: 80%;
+}
+
+.App {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.column-10 {
+  width: 10%;
+}
+
+.right,
+.left,
+.indicator {
+  font-size: 2rem;
+}
+
+.poke {
+  width: 100%;
+  padding: 3rem;
+}
+
+.image-div {
+  display: flex;
+  width: 100%;
+}
