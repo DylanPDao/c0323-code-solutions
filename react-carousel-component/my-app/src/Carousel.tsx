@@ -11,7 +11,7 @@ type Prop = {
     id: number;
   }[];
 };
-
+//added note to save and commit
 export default function Carousel({ images }: Prop) {
   const [activeIndex, setActiveIndex] = useState(0);
 
