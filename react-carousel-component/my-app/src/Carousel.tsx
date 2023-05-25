@@ -5,18 +5,20 @@ import {
 } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 
+type StdProp = {
+  imgLocation: string;
+  id: number;
+};
+
 type Prop = {
-  images: {
-    imgLocation: string;
-    id: number;
-  }[];
+  images: StdProp[];
 };
 //added note to save and commit
 export default function Carousel({ images }: Prop) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       setActiveIndex((activeIndex + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
@@ -65,10 +67,7 @@ function ArrowButton({
 }
 
 type indicatorProps = {
-  images: {
-    imgLocation: string;
-    id: number;
-  }[];
+  images: StdProp[];
   onSelect: (id: number) => void;
   isActive: number;
 };
@@ -89,10 +88,7 @@ function Indicators({ images, onSelect, isActive }: indicatorProps) {
 }
 
 type PokemonProps = {
-  images: {
-    imgLocation: string;
-    id: number;
-  }[];
+  images: StdProp[];
   isActive: number;
 };
 
