@@ -13,6 +13,9 @@ export default function User({ userId, onCancel }) {
     async function getData() {
       try {
         const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(response.status);
+        }
         const data = await response.json();
         setUser(data);
       } catch (err) {
