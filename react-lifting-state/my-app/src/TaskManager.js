@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-/**
- * Manages outstanding and completed tasks.
- * Outstanding and completed tasks are displayed in separate lists.
- * Displayed tasks can be filtered using the Filter input. Only tasks
- * whose name matches the filter value are displayed in either list.
- * Props:
- *   - tasks, an Array of { id: number, name: string, completed: boolean }
- * TODO: It doesn't work!
- */
 export default function TaskManager({ tasks }) {
   const [completed, setCompleted] = useState([]);
   const [notCompleted, setNotCompleted] = useState([]);
@@ -41,9 +32,6 @@ export default function TaskManager({ tasks }) {
   );
 }
 
-/**
- * An input field that can be used to filter a list of items.
- */
 function Filter() {
   const [filter, setFilter] = useState('');
   return (
