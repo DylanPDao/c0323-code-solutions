@@ -51,6 +51,7 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
     const params = [username];
     const result = await db.query(sql, params);
     const [user] = result.rows;
+    console.log();
     if (!user) {
       throw new ClientError(401, `invalid login`);
     }
@@ -63,7 +64,7 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
       username: username,
     };
     const token = jwt.sign(payload, process.env.TOKEN_SECRET);
-    res.status(200).json(token);
+    res.status(200).json({ payload, token });
     /*
      *
      *   If the password does match,
