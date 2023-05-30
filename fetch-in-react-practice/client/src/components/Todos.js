@@ -26,67 +26,55 @@ export default function Todos() {
       }
     };
     getTodos();
-  }, [todos]);
+  }, []);
 
   /* Implement addTodo to add a new todo. Hints are at the bottom of the file. */
   async function addTodo(newTodo) {
-    const addTodo = async () => {
-      try {
-        const res = await fetch('/api/todos', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(newTodo),
-        });
-        if (!res.ok) {
-          throw new Error('Fetch Error: ', res.status);
-        }
-        const todo = await res.json();
-        setTodos((todos) => [...todos, todo]);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setIsLoading(false);
+    try {
+      const res = await fetch('/api/todos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newTodo),
+      });
+      if (!res.ok) {
+        throw new Error('Fetch Error: ', res.status);
       }
-    };
-    addTodo();
+      const todo = await res.json();
+      setTodos([...todos, todo]);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   /* Implement toggleCompleted to toggle the completed state of a todo. Hints are at the bottom of the file. */
   async function toggleCompleted(todoId) {
-    const completedStatus = {};
-    todos.map((todo) => {
-      if (todo.todoId === todoId) {
-        completedStatus['isCompleted'] = !todo.isCompleted;
-      }
-    });
+    const completedTodos = todos.find((todo) => todo.todoId === todoId);
 
-    const patchTodo = async () => {
-      try {
-        const res = await fetch(`/api/todos/${todoId}`, {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(completedStatus),
-        });
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        const todoRes = await res.json();
-        todos.map((todo) => {
-          if (todo.todoId === todoId) {
-            todo = todoRes;
-          }
-        });
-      } catch (err) {
-        setError(err);
-      } finally {
-        setIsLoading(false);
+    try {
+      const res = await fetch(`/api/todos/${todoId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ isCompleted: !completedTodos.isCompleted }),
+      });
+      if (!res.ok) {
+        throw new Error(res.status);
       }
-    };
-    patchTodo();
+      const todoRes = await res.json();
+      const allTodos = todos.map((todo) =>
+        todo.todoId === todoRes.todoId ? todoRes : todo
+      );
+      setTodos(allTodos);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   if (isLoading) {
