@@ -43,16 +43,29 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
     if (!username || !password) {
       throw new ClientError(401, 'invalid login');
     }
-
-    /* your code starts here */
-
-    /* Query the database to find the "userId" and "hashedPassword" for the "username".
-     * If no user is found,
-     *   throw a 401: 'invalid login' error.
-     * If a user is found,
-     *   confirm that the password included in the request body matches the "hashedPassword" with `argon2.verify()`
-     *   If the password does not match,
-     *     throw a 401: 'invalid login' error.
+    const sql = `
+      select *
+      from users
+      where "username" = $1
+    `;
+    const params = [username];
+    const result = await db.query(sql, params);
+    const [user] = result.rows;
+    if (!user) {
+      throw new ClientError(401, `invalid login`);
+    }
+    const isMatching = await argon2.verify(user.hashedPassword, password);
+    if (!isMatching) {
+      throw new ClientError(401, `invalid login`);
+    }
+    const payload = {
+      userId: user.userId,
+      username: username,
+    };
+    const token = jwt.sign(payload, process.env.TOKEN_SECRET);
+    res.status(200).json(token);
+    /*
+     *
      *   If the password does match,
      *     Create a payload object containing the user's "userId" and "username".
      *     Create a new signed token with `jwt.sign()`, using the payload and your TOKEN_SECRET
