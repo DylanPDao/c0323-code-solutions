@@ -67,11 +67,8 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
   }
 });
 
-app.get('/api/entries', async (req, res, next) => {
+app.get('/api/entries', authMiddleware, async (req, res, next) => {
   try {
-    if (!req.user) {
-      throw new ClientError(401, 'not logged in');
-    }
     const sql = `
       select * from "entries"
         where "userId" = $1
@@ -84,11 +81,8 @@ app.get('/api/entries', async (req, res, next) => {
   }
 });
 
-app.post('/api/entries', async (req, res, next) => {
+app.post('/api/entries', authMiddleware, async (req, res, next) => {
   try {
-    if (!req.user) {
-      throw new ClientError(401, 'not logged in');
-    }
     const { title, notes, photoUrl } = req.body;
     if (!title || !notes || !photoUrl) {
       throw new ClientError(
@@ -110,11 +104,8 @@ app.post('/api/entries', async (req, res, next) => {
   }
 });
 
-app.put('/api/entries/:entryId', async (req, res, next) => {
+app.put('/api/entries/:entryId', authMiddleware, async (req, res, next) => {
   try {
-    if (!req.user) {
-      throw new ClientError(401, 'not logged in');
-    }
     const entryId = Number(req.params.entryId);
     const { title, notes, photoUrl } = req.body;
     if (!Number.isInteger(entryId) || !title || !notes || !photoUrl) {
@@ -143,11 +134,8 @@ app.put('/api/entries/:entryId', async (req, res, next) => {
   }
 });
 
-app.delete('/api/entries/:entryId', async (req, res, next) => {
+app.delete('/api/entries/:entryId', authMiddleware, async (req, res, next) => {
   try {
-    if (!req.user) {
-      throw new ClientError(401, 'not logged in');
-    }
     const entryId = Number(req.params.entryId);
     if (!Number.isInteger(entryId)) {
       throw new ClientError(400, 'entryId must be an integer');
