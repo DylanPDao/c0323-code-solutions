@@ -40,17 +40,16 @@ export default function App() {
   }
 
   const contextValue = { user, token, handleSignIn, handleSignOut };
-  /* TODO: Wrap the `Routes` with `AppContext.Provider`
-   * and pass `contextValue` as the Provider value.
-   */
   return (
-    <Routes>
-      <Route path="/" element={<NavBar />}>
-        <Route index element={<Home />} />
-        <Route path="sign-in" element={<Auth action="sign-in" />} />
-        <Route path="sign-up" element={<Auth action="sign-up" />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <AppContext.Provider value={contextValue}>
+      <Routes>
+        <Route path="/" element={<NavBar />}>
+          <Route index element={<Home />} />
+          <Route path="sign-in" element={<Auth action="sign-in" />} />
+          <Route path="sign-up" element={<Auth action="sign-up" />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </AppContext.Provider>
   );
 }

@@ -6,7 +6,7 @@ import AppContext from '../components/AppContext';
 import './HomePage.css';
 
 export default function Home() {
-  /* TODO: Grab `user` from `AppContext` */
+  const { user } = useContext(AppContext);
   const navigate = useNavigate();
 
   useEffect(() => {

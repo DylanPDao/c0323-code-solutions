@@ -7,9 +7,7 @@ import AppContext from '../components/AppContext';
 
 export default function AuthPage({ action }) {
   const navigate = useNavigate();
-  /* TODO: Grab `user` and `handleSignIn` from `AppContext` */
-  const user = undefined;
-  const handleSignIn = undefined;
+  const { user, handleSignIn } = useContext(AppContext);
 
   useEffect(() => {
     if (user) navigate('/');
