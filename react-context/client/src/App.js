@@ -19,8 +19,10 @@ export default function App() {
     // If user logged in previously on this browser, authorize them
     const auth = localStorage.getItem(tokenKey);
     if (auth) {
-      setUser(auth.user);
-      setToken(auth.token);
+      const a = JSON.parse(auth);
+      setUser(a.user);
+      setToken(a.token);
+      console.log(a);
     }
     setIsAuthorizing(false);
   }, []);
@@ -28,7 +30,7 @@ export default function App() {
   if (isAuthorizing) return null;
 
   function handleSignIn(auth) {
-    localStorage.setItem(tokenKey, auth);
+    localStorage.setItem(tokenKey, JSON.stringify(auth));
     setUser(auth.user);
     setToken(auth.token);
   }
