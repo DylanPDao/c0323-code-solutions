@@ -15,25 +15,38 @@ export function useTodos() {
   const [todos, setTodos] = useState();
   const [error, setError] = useState();
   useEffect(() => {
-    /* TODO: If `todos` hasn't been defined yet, read the items from the API
-     * and set them into the `todos` state.
-     */
+    async function loadTodos() {
+      try {
+        const todosList = await readTodos();
+        setTodos(todosList);
+      } catch (error) {
+        setError(error);
+      }
+    }
+    if (!todos) loadTodos();
   }, [todos]);
 
-  function addTodo(newTodo) {
-    /* TODO: Call the API function that creates a Todo item.
-     * When the promise returned by that function resolves, update the `todos` state.
-     * Note that it is critical that you pass a _new_ array. Do not modify the `todos` array.
-     */
+  async function addTodo(newTodo) {
+    try {
+      const todoItem = await createTodo(newTodo);
+      setTodos([...todos, todoItem]);
+    } catch (error) {
+      setError(error);
+    }
   }
 
-  function toggleCompleted(todoId) {
-    /* TODO: Find the Todo item being updated, toggle its completed prop, and call
-     * the API function that updates a Todo item.
-     * When the promise returned by that function resolves, update the `todos` state.
-     * When updating this state, use the updated `todo` returned from the API.
-     * Note that it is critical that you pass a _new_ array. Do not modify the `todos` array.
-     */
+  async function toggleCompleted(todoId) {
+    try {
+      const finishedTodo = todos.find((todo) => todo.todoId === todoId);
+      finishedTodo.isCompleted = !finishedTodo.isCompleted;
+      const updatedTodoItem = await updateTodo(finishedTodo);
+      const newTodoList = todos.map((todo) =>
+        updatedTodoItem.todoId === todo.todoId ? updatedTodoItem : todo
+      );
+      setTodos(newTodoList);
+    } catch (error) {
+      setError(error);
+    }
   }
 
   return {

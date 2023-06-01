@@ -5,14 +5,15 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a React custom hook?
-
+  self made simple JavaScript functions that we can use to isolate the reusable part from a functional component
 - When are custom hooks useful? When are they not required?
-
+  use when we need to reuse function multiple times and store the data
 - What is the syntax (or naming convention) for writing a custom hook?
-
+  useBlah
 - How do you call a custom hook?
-
+  with function call
 - When do custom hooks execute?
+  when its called
 
 ## Notes
 
