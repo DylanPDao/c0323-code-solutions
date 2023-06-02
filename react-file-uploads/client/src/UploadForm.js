@@ -1,20 +1,21 @@
+import { useState } from 'react';
+import './UploadForm.css';
+
 export default function UploadForm() {
-  function handleSubmit(event) {
-    /* Prevent the browser's default behavior for form submissions.
-     * Create a `new` FormData object from the `event`.
-     *
-     * Use fetch() to send a POST request to http://localhost:8080/api/uploads.
-     * The body should be the form data object you created (not a JSON string).
-     * Headers are not necessary as fetch will use the correct Content-Type
-     * automatically (multipart/form-data).
-     *
-     * Parse the JSON response body and log the parsed response body.
-     * Log any errors to the console (using `console.error`).
-     *
-     * References:
-     * https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData
-     * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_a_file
-     */
+  const [isImage, setImage] = useState();
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    try {
+      const response = await fetch('/api/uploads', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
+      setImage(result[0].url);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
@@ -48,6 +49,9 @@ export default function UploadForm() {
               </button>
             </div>
           </form>
+          <div className="picture-div">
+            {isImage ? <img alt="fresh" src={isImage} /> : undefined}
+          </div>
         </div>
       </div>
     </div>

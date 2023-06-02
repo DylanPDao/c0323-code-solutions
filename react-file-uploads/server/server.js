@@ -20,17 +20,23 @@ app.use(express.json());
 app.post(
   '/api/uploads',
   uploadsMiddleware.single('image'),
-  (req, res, next) => {
+  async (req, res, next) => {
     try {
       const { caption } = req.body;
       if (!caption) {
         throw new ClientError(400, 'caption is a required field');
       }
-      /* TODO:
-       * - create a url for the image by combining '/images/' with req.file.filename
-       * - insert the "caption" and "url" into the "images" table
-       * - respond with the inserted row data and the proper status code for inserting data
-       */
+      const url = `/images/${req.file.filename}`;
+      const sql = `
+        insert into "images" ("url", caption)
+        values ($1, $2)
+        returning *
+      `;
+      const params = [url, caption];
+      const result = await db.query(sql, params);
+      const image = result.rows;
+      console.log(image);
+      res.status(201).json(image);
     } catch (err) {
       next(err);
     }
