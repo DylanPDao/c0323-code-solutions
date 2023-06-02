@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './UploadForm.css';
 
 export default function UploadForm() {
-  const [isImage, setImage] = useState();
+  const [image, setImage] = useState();
   async function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -11,6 +11,7 @@ export default function UploadForm() {
         method: 'POST',
         body: formData,
       });
+      if (!response.ok) throw new Error(`Fetch Error ${response.status}`);
       const result = await response.json();
       setImage(result[0].url);
     } catch (err) {
@@ -50,7 +51,7 @@ export default function UploadForm() {
             </div>
           </form>
           <div className="picture-div">
-            {isImage ? <img alt="fresh" src={isImage} /> : undefined}
+            {image && <img alt="fresh" src={image} />}
           </div>
         </div>
       </div>
