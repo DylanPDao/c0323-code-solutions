@@ -58,6 +58,7 @@ app.get('/api/images', async (req, res, next) => {
 
 app.use(errorMiddleware);
 
+// IMPORTANT COPY THIS EXACTLY
 app.listen(process.env.PORT, () => {
   console.log(`express server listening on port ${process.env.PORT}`);
 });
