@@ -1,13 +1,13 @@
 export default function maxValue(stack) {
-  let count = stack.peek();
+  let biggestNumber = stack.peek();
   if (stack.peek() === undefined) {
     return -Infinity;
   }
   while (stack.peek() !== undefined) {
     const popped = stack.pop();
-    if (popped > count) {
-      count = popped;
+    if (popped > biggestNumber) {
+      biggestNumber = popped;
     }
   }
-  return count;
+  return biggestNumber;
 }

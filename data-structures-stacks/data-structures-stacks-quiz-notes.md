@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What methods are available on a Stack data structure?
   push() , pop() and peek()
 - What must you do to access the value at an arbitrary point in a stack (not just the "top")?
-  pop and then replace
+  pop the top of the stack and then replace in reverse order as needed
 
 ## Notes
 
