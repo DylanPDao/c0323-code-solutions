@@ -1,1 +1,4 @@
-export default function takeFront(queue) {}
+export default function takeFront(queue) {
+  const value = queue.dequeue();
+  return value;
+}

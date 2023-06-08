@@ -1,1 +1,3 @@
-export default function addToBack(queue, value) {}
+export default function addToBack(queue, value) {
+  queue.enqueue(value);
+}
