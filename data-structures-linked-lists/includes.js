@@ -1,1 +1,10 @@
-export default function includes(list, value) {}
+export default function includes(list, value) {
+  let node = list;
+  while (node) {
+    if (node.data === value) {
+      return true;
+    }
+    node = node.next;
+  }
+  return false;
+}

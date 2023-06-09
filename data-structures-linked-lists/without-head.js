@@ -1,1 +1,3 @@
-export default function withoutHead(list) {}
+export default function withoutHead(list) {
+  return list.next;
+}

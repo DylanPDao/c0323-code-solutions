@@ -1,1 +1,3 @@
-export default function getHead(list) {}
+export default function getHead(list) {
+  return list.data;
+}
