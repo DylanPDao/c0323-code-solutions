@@ -10,5 +10,4 @@ export default function append(list, value) {
     }
   }
   lastNode.next = newNode;
-  return lastNode;
 }
