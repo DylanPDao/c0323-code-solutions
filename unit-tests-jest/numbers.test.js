@@ -10,9 +10,9 @@ describe('evenNumbers', () => {
 
 describe('toDollars', () => {
   it('returns string with amount as dollar value', () => {
-    const amount = 20;
+    const amount = 6 / 7;
     const result = toDollars(amount);
-    expect(result).toEqual('$20.00');
+    expect(result).toEqual('$0.86');
   });
 });
 

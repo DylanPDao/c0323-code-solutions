@@ -9,7 +9,7 @@ export function evenNumbers(numbers) {
  * Returns a number formatted in dollars and cents.
  */
 export function toDollars(amount) {
-  return `$${amount}.00`;
+  return `$${amount.toFixed(2)}`;
 }
 
 /**
@@ -20,9 +20,7 @@ export function toDollars(amount) {
  * @returns a new array.
  */
 export function divideBy(numbers, divisor) {
-  const divided = [];
-  numbers.map((number) => divided.push(number / divisor));
-  return divided;
+  return numbers.map((number) => number / divisor);
 }
 
 /**
