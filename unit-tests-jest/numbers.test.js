@@ -33,3 +33,4 @@ describe('multiplyBy', () => {
     expect(result).toEqual({ 1: 100, 2: 1000, 3: 10000, 4: 100000 });
   });
 });
+//
