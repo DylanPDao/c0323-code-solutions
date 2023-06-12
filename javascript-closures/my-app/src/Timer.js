@@ -8,7 +8,7 @@ export default function Timer() {
       console.log(`Time is: ${time}`);
     }, 1000);
     return () => clearTimeout(timerId);
-  }, []);
+  }, [time]);
 
   return (
     <div>

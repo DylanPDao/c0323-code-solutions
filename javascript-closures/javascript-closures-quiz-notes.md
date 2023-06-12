@@ -5,16 +5,17 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - In JavaScript, when is scope determined?
-
+  when code is ran, function is declared and variables inside are assigned to function variable
 - What allows JavaScript functions to "remember" variables from their surroundings?
-
+  execution stack
 - What values does a closure contain?
-
+  whatever is declared inside
 - When is a closure created?
-
+  when function gets declared
 - How can you tell if a function will be created as a closure?
-
+  functions created in global scope have a closure
 - In React, what is one important case where you need to know if a closure was created?
+  In useEffect, two problems frequently arise: stale closures and infinite rerenders.
 
 ## Notes
 
