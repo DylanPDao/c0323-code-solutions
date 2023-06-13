@@ -9,7 +9,20 @@
   ],
   "customizations": {
     "vscode": {
-      "extensions": ["thebearingedge.lfz-code", "esbenp.prettier-vscode"]
+      "extensions": [
+        "thebearingedge.lfz-code",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+        "dbaeumer.vscode-eslint",
+        "bierner.github-markdown-preview",
+        "eamodio.gitlens",
+        "Orta.vscode-jest",
+        "thebearingedge.livereload-server",
+        "doublefint.pgsql",
+        "ckolkman.vscode-postgres",
+        "stylelint.vscode-stylelint",
+        "bradlc.vscode-tailwindcss"
+      ]
     }
   },
   "postCreateCommand": "[ ! -f package-lock.json ] || npm ci; sudo chown -R dev:dev ~/.ssh && chmod 700 ~/.ssh && chmod 600 ~/.ssh/* && chmod 644 ~/.ssh/*.pub",
